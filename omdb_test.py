@@ -1,5 +1,4 @@
 import omdb
-import sys
 import tweepy
 import json
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
