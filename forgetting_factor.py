@@ -10,31 +10,23 @@ def ignore_check(tweet_author_id):
 
             IGNORE_BOUNDARY_POS = 1.8
             IGNORE_BOUNDARY_NEG = -1.8
-
+            users_tweet_count = 20 #check last twenty tweets
             #get user screen name
-            user = api.get_user(tweet_author_id)
-            print user.screen_name
+            #user = api.get_user(tweet_author_id)
+            #print user.screen_name
 
-            #get users recent tweets and calculate the sentiment of
-            #the users recent tweets
-            #make sure not too much near the extremes
-            #this is to ignore users that are tweeting to positively or negatively
+            #get users recent tweets and calculate the sentiment average
             tweets2 = api.user_timeline(id=tweet_author_id, count=users_tweet_count)
             compound_count = 0 #reset compound_count for next user
             for tweet2 in tweets2:
                 tweet_text2 = tweet2.text.encode('ascii','ignore')
-                #print tweet.text.encode('ascii','ignore')
                 vs = analyzer.polarity_scores(tweet_text2)
-                #print("{:-<65} {}".format(tweet_text2, str(vs)))
                 compound_count += vs['compound']
 
             compound_average = float(compound_count)/users_tweet_count
 
             #ignore if tweeter is too positive or negative
-            #based on last twenty tweets sentiment average
             if compound_average > 1.8 or compound_average < -1.8:
-                #print "Ignore user"
-                #print "User average tweet sentiment: " + str(compound_average)
                 return true; #return true if we need to ignore user
 
             return false #return false if we don't need to ignore user
@@ -71,7 +63,6 @@ if __name__ == '__main__':
 
     analyzer = SentimentIntensityAnalyzer()
     compound_count = 0
-    users_tweet_count = 20
     for tweet in tweets:
         date_posted = tweet.created_at
         tweet_text = tweet.text.encode('ascii','ignore')
