@@ -4,11 +4,11 @@ from datetime import datetime
 import requests, re
 
 #setting up authentication
-consumer_key = "Bvo4QBYXneS8Z4NgXRpPltrHw"
-consumer_secret = "qYU60CVlJyoaJojB9QHoVZP2I37lnvwIZWP9cYnv5KsPGFIn7z"
-access_token = "271137941-zrWtZjcVbDsuaGwvwg3rz4wRJP6er5scmqTAOxct"
-access_token_secret = "vGN7VQWHc86YtYX8Q8QVRnnhD5edgUgezRDyGzNkUYrMW"
-youtube_api_key = "AIzaSyBY041wCtZNDUeAHXdF1fY2RYcfoaEDFqk"
+consumer_key = ""
+consumer_secret = ""
+access_token = ""
+access_token_secret = ""
+youtube_api_key = ""
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
