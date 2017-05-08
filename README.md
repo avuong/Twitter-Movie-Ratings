@@ -2,15 +2,22 @@
 Social Sensing Final Project
 
 ## How to Use
-In order to run the program you will need omdb, NLTK, VADER Sentiment Analysis, and tweepy. To run the web application you will also need flask and wtforms. These packages can all be installed using pip install:
+In order to run the program you will need omdb, NLTK, VADER Sentiment Analysis from NLTK, and tweepy. To run the web application you will also need flask and wtforms. These packages can all be installed using pip install:
   ```
   pip install omdb
   pip install nltk
-  pip install vaderSentiment
   pip install tweepy
   pip install flask
   pip install wtforms
   ```
+  
+To install VADER Sentiment Analysis from NLTK, you can use the NLTK downloader in the terminal python interpreter:
+```
+python
+>import nltk
+>nltk.download()
+>d vader_lexicon
+```
 
 To run the terminal version of the program use the following command:
 ```
