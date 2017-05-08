@@ -19,6 +19,8 @@ python
 >d vader_lexicon
 ```
 
+Finally, we use both the Twitter and YouTube APIs. You will therefore need to obtain your own API keys and secrets for these APIs and fill in the apporpriate variables with your keys.
+
 To run the terminal version of the program use the following command:
 ```
 python twitter_movie_ratings.py
