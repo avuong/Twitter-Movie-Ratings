@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	</head>
+
+	<body>
+		<h2 style="text-align: center;">Enter movie name:</h2>
+
+		<div class="valign container">
+			<form action="" method="post">
+				{{form.csrf}}
+
+				<div class="input text">
+					{{form.name}}
+				</div>
+				<br>
+				<div class="input submit">
+					<input class="waves-effect waves-light btn" type="submit" name="my-form" value="GO">
+				</div>
+			</form>
+		</div>
+
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				{% for message in messages %}
+					<p>{{ message[1] }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+	</body>
+<html>

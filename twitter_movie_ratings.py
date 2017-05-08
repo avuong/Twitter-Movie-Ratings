@@ -1,5 +1,5 @@
 import tweepy, json, time, omdb
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from datetime import datetime
 import requests, re
 
